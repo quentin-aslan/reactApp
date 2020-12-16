@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c29a247c-fb8d-47af-8ea2-e15eaf7ecfc7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Store/Reducers/userReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Store/configureStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/ElamenorApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/ElamenorApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FormLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/FormLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/FormSend.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/FormSend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigations/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/navigations/navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Login.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1lgkMvNPSiqJezlRI8FU0uyhBom" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/App/OxStart_Dev/OxStartV2/oxstart" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Quentin Aslan\Documents\_TestDev\reactApp\screens" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c29a247c-fb8d-47af-8ea2-e15eaf7ecfc7" name="Default Changelist" comment="" />
+      <created>1608026076325</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608026076325</updated>
+      <workItem from="1608026077495" duration="16367000" />
+      <workItem from="1608112751407" duration="4309000" />
+    </task>
+    <task id="LOCAL-00001" summary="[Add] Login form + Navigation + Many update">
+      <created>1608052989472</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1608052989472</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[Add] Login form + Navigation + Many update" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Add] Login form + Navigation + Many update" />
+  </component>
+</project>

@@ -18,7 +18,7 @@ export function getTchatWs() {
  * @param {String} password
  * @returns {Boolean|JSON}
  */
-export function login(username, password) {
+export function requestLogin(username, password) {
     const url = "http://elamenor-rest.herokuapp.com/api/auth/login";
     return fetch(url, {
         method: 'POST', headers: {Accept: 'application/json', 'Content-Type': 'application/json'}, body: JSON.stringify({username, password})

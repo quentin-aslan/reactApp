@@ -12,13 +12,6 @@ const AppStackNavigator = createStackNavigator({
         screen: Tchat,
         navigationOptions: {title: 'Messagerie instantanée'}
     }
-}, {
-    navigationOptions: {
-        headerStyle:{backgroundColor:'#FFFF00'},
-        headerTintColor:'red',
-        gesturesEnabled:false
-    },
-    cardStyle: { backgroundColor: '#474747' }
 });
 
 export default createAppContainer(AppStackNavigator);

@@ -1,22 +1,29 @@
 import React from 'react'
 import { StyleSheet, View, TextInput, Button, Alert } from 'react-native'
-import {login} from './../API/ElamenorApi';
+import {requestLogin} from '../API/ElamenorApi';
+import {connect} from 'react-redux';
 
 class FormLogin extends React.Component {
     constructor(props) {
         super(props);
+        console.log(props);
         this.state = {
             username: '',
             password: ''
         }
+
+        this._requestLogin = this._requestLogin.bind(this);
     }
 
-    _requestLogin() {
-        console.log("On press login");
-        const res = login(this.state.username, this.state.password);
+    async _requestLogin() {
+        console.log(this.props);
+        const res = await requestLogin(this.state.username, this.state.password);
         console.log(res);
         if(res) {
-            return Alert.alert("Connexion réussi", "Bien joué");
+            // Stockage des informations de l'utilisateur dans le state (il faudra le locals storage aussi) + affichage du tchat
+            const action = {type: "UPDATE_USER", value: {username: res.user.username, jwt: res.jwt}}
+            this.props.dispatch(action);
+            return this.props.displayTchat(res.user.username);
         } return Alert.alert("Connexion échouée", "Mauvais identifiants");
     }
 
@@ -24,11 +31,11 @@ class FormLogin extends React.Component {
         return (
             <View style={styles.container}>
                 <TextInput
-                    onChangetext={(username) => this.setState({username})}
+                    onChangeText={(text) => this.setState({username: text})}
                     style={styles.textInput}
                     placeholder='Username' placeholderTextColor= "#b8b8b8" />
                 <TextInput
-                    onChangetext={(password) => this.setState({password})}
+                    onChangeText={(text) => this.setState({password: text})}
                     keyboardType= "numeric"
                     secureTextEntry={true}
                     style={styles.textInput}
@@ -62,4 +69,11 @@ const styles = StyleSheet.create({
     }
 });
 
-export default FormLogin;
+// récupérations des variable global et ajout dans les props du composant
+const mapStateToProps = (state) => {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps)(FormLogin);
