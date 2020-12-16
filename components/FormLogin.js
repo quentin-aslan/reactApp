@@ -1,24 +1,40 @@
 import React from 'react'
-import { StyleSheet, View, TextInput, Button, Alert } from 'react-native'
-import {requestLogin} from '../API/ElamenorApi';
+import { StyleSheet, View, TextInput, Button, Alert, ActivityIndicator, Text } from 'react-native'
+import {requestLogin, requestCheckJWT} from '../API/ElamenorApi';
 import {connect} from 'react-redux';
 
 class FormLogin extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
+
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            loading: false
+        }
+
+        // Si on à un JWT enregistrer dans redux-persist, on vérifie que le JWT est bon.
+        if(this.props.user) {
+            if(this.props.user.jwt) { this.state.loading = true; this._requestCheckJWT();}
         }
 
         this._requestLogin = this._requestLogin.bind(this);
+        this._requestCheckJWT = this._requestCheckJWT.bind(this);
+    }
+
+    async _requestCheckJWT() {
+        const jwt = this.props.user.jwt;
+        const res = await requestCheckJWT(jwt);
+        if(res) return this.props.displayTchat(this.props.user.username);
+        else {
+            Alert.alert("Oups ...", `Salut ${this.props.user.username}, tu à été déconnecté, merci de remplir le formulaire de connexion.`);
+            this.setState({loading: false});
+        }
     }
 
     async _requestLogin() {
         console.log(this.props);
         const res = await requestLogin(this.state.username, this.state.password);
-        console.log(res);
         if(res) {
             // Stockage des informations de l'utilisateur dans le state (il faudra le locals storage aussi) + affichage du tchat
             const action = {type: "UPDATE_USER", value: {username: res.user.username, jwt: res.jwt}}
@@ -30,17 +46,24 @@ class FormLogin extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <TextInput
-                    onChangeText={(text) => this.setState({username: text})}
-                    style={styles.textInput}
-                    placeholder='Username' placeholderTextColor= "#b8b8b8" />
-                <TextInput
-                    onChangeText={(text) => this.setState({password: text})}
-                    keyboardType= "numeric"
-                    secureTextEntry={true}
-                    style={styles.textInput}
-                    placeholder='PIN CODE' placeholderTextColor= "#b8b8b8"/>
-                <Button title='Connexion' onPress={this._requestLogin}/>
+                {this.state.loading && <View>
+                    <Text style={{color: "#FFFFFF", fontSize: 20}}>{"Vérification de vos informations"}</Text>
+                    <ActivityIndicator size="large" color="#FFFFFF"/>
+                </View>}
+
+                {!this.state.loading && <View style={styles.container}>
+                    <TextInput
+                        onChangeText={(text) => this.setState({username: text})}
+                        style={styles.textInput}
+                        placeholder='Username' placeholderTextColor= "#b8b8b8" />
+                    <TextInput
+                        onChangeText={(text) => this.setState({password: text})}
+                        keyboardType= "numeric"
+                        secureTextEntry={true}
+                        style={styles.textInput}
+                        placeholder='PIN CODE' placeholderTextColor= "#b8b8b8"/>
+                    <Button title='Connexion' onPress={this._requestLogin}/>
+                </View>}
             </View>
         )
     }
@@ -51,7 +74,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: "#121212"
+        backgroundColor: "#4a4a4a",
+        alignSelf: 'stretch',
     },
     textInput: {
         alignSelf: 'stretch',

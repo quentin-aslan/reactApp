@@ -9,7 +9,7 @@ class MessageItem extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.author}>{this._message.user.username}: </Text>
+                <Text style={styles.author}>{this._message.username}: </Text>
                 <Text style={styles.message}>{this._message.message}</Text>
             </View>
         )
