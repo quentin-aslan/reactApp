@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c29a247c-fb8d-47af-8ea2-e15eaf7ecfc7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/ElamenorApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/API/ElamenorApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Store/configureStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/Store/configureStore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/FormLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/FormLogin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/FormSend.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/FormSend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ListMessage.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ListMessage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/MessageItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/MessageItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/Tchat.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/Tchat.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +29,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/App/OxStart_Dev/OxStartV2/oxstart" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -65,6 +56,7 @@
       <workItem from="1608026077495" duration="16367000" />
       <workItem from="1608112751407" duration="12136000" />
       <workItem from="1608130602807" duration="5944000" />
+      <workItem from="1608289143642" duration="1292000" />
     </task>
     <task id="LOCAL-00001" summary="[Add] Login form + Navigation + Many update">
       <created>1608052989472</created>

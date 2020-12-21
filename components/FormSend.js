@@ -7,7 +7,8 @@ class FormSend extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            message: ''
+            message: '',
+            sendStatus: false
         }
         this.socket = this.props.socket;
         this._sendMessage = this._sendMessage.bind(this);
@@ -16,9 +17,9 @@ class FormSend extends React.Component {
     _sendMessage() {
         const message = this.state.message;
         if(message) {
-            console.log(message);
-            console.log(this.props.user.username);
             this.socket.emit("new", JSON.stringify({username: this.props.user.username, message: message}));
+            this.setState({sendStatus: true});
+            setTimeout(() => this.setState(({sendStatus: false})), 1500);
         } else Alert.alert("Oups :/", "Vous ne pouvez pas envoyer un message vide.");
     }
 
@@ -26,7 +27,7 @@ class FormSend extends React.Component {
         return (
             <View style={styles.container}>
                 <TextInput onChangeText={(text) => this.setState({message: text})} style={styles.textInput} placeholder="Écrivez ici votre message ;-)"/>
-                <Button color="#841584" title="Envoyer" onPress={this._sendMessage}/>
+                <Button disabled={this.state.sendStatus} color="#841584" title="Envoyer" onPress={this._sendMessage}/>
             </View>
         )
     }
